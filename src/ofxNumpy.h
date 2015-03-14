@@ -121,7 +121,6 @@ void toOf(const NpyArray& o1, vector<ofVec2f>& o2)
     o2.clear();
     size_t dim, n;
     getSize(o1, dim, n);
-    ofLogNotice("vec2") << dim << ", " << n;
     assert(dim > 0 && dim < 3);
     
     switch (dim) {
@@ -185,8 +184,6 @@ bool load(const string& path, T& data)
     }
     
     NpyArray array = npy_load(ofToDataPath(path));
-    
-    ofLog() << array.data_type << " : " << path;
     toOf(array, data);
     return true;
 }
