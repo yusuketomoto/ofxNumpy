@@ -79,9 +79,9 @@ else if (o.data_type == 'i') {                  \
         convert<DIM>(o.data<int64_t>(), n, o2); \
 }                                               \
 else if (o.data_type == 'u') {                  \
-    if (o.word_size == sizeof(uint))             \
+    if (o.word_size == sizeof(uint))            \
         convert<DIM>(o.data<uint>(), n, o2);    \
-    else if (o.word_size == sizeof(uint64_t))    \
+    else if (o.word_size == sizeof(uint64_t))   \
         convert<DIM>(o.data<uint64_t>(), n, o2);\
 }
 
