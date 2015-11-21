@@ -65,24 +65,24 @@ void convert(T1* o1, size_t n, vector<T2>& o2)
 template <typename T1, typename T2>
 void toOf(const T1& o1, vector<T2>& o2);
 
-#define CONV(o, N, DIM)                         \
-if (o.data_type == 'f') {                       \
-    if (o.word_size == sizeof(float))           \
-        convert<DIM>(o.data<float>(), n, o2);   \
-    else if (o.word_size == sizeof(double))     \
-        convert<DIM>(o.data<double>(), n, o2);  \
-}                                               \
-else if (o.data_type == 'i') {                  \
-    if (o.word_size == sizeof(int))             \
-        convert<DIM>(o.data<int>(), n, o2);     \
-    else if (o.word_size == sizeof(int64_t))    \
-        convert<DIM>(o.data<int64_t>(), n, o2); \
-}                                               \
-else if (o.data_type == 'u') {                  \
-    if (o.word_size == sizeof(uint))            \
-        convert<DIM>(o.data<uint>(), n, o2);    \
-    else if (o.word_size == sizeof(uint64_t))   \
-        convert<DIM>(o.data<uint64_t>(), n, o2);\
+#define CONV(o, N, DIM)                                 \
+if (o.data_type == 'f') {                               \
+    if (o.word_size == sizeof(float))                   \
+        convert<DIM>(o.data<float>(), n, o2);           \
+    else if (o.word_size == sizeof(double))             \
+        convert<DIM>(o.data<double>(), n, o2);          \
+}                                                       \
+else if (o.data_type == 'i') {                          \
+    if (o.word_size == sizeof(int))                     \
+        convert<DIM>(o.data<int>(), n, o2);             \
+    else if (o.word_size == sizeof(int64_t))            \
+        convert<DIM>(o.data<int64_t>(), n, o2);         \
+}                                                       \
+else if (o.data_type == 'u') {                          \
+    if (o.word_size == sizeof(unsigned int))            \
+        convert<DIM>(o.data<unsigned int>(), n, o2);    \
+    else if (o.word_size == sizeof(uint64_t))           \
+        convert<DIM>(o.data<uint64_t>(), n, o2);        \
 }
 
 void getSize(const NpyArray& o, size_t& dim, size_t& n)
